@@ -17,8 +17,13 @@ class ContactsController {
     this._view.displayContactList(contactList);
   };
 
-  handleAddContact = (name, birthdate) => {
-    this._model.addContact(name, birthdate);
+  handleAddContact = (name, birthdate, isValid) => {
+    if(isValid) {
+      this._model.addContact(name, birthdate);
+      this._view._form.classList.remove("was-validated");
+      this._view._form.reset();
+      this._view._form.name.focus();
+    }
   };
 
   handleEditContact = (id, name, birthdate) => {

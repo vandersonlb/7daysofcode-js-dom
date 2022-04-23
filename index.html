@@ -6,32 +6,81 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>7DaysOfCode - JS e DOM</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   <script async type="module" src="./script.js"></script>
+  <style>
+    .icon {
+      height: 1.25rem !important;
+    }
+    .btn.btn-outline-danger {
+      background-color: transparent;
+      border: none;
+      padding: 0 6px;
+      float: right;
+    }
+    .btn-outline-danger:hover {
+      color: #bb2d3b;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Cadastro de pessoas</h1>
-  <form class="form js-form">
-    <label for="name">
-      Nome
-      <input class="form-field js-field" id="name" maxlength="120" name="name" required type="text" pattern="(\D\s?){3,120}" title="Esse campo deve ter entre 3 e 120 letras.">
-    </label>
-    <label for="birthdate">
-      Data de Nascimento
-      <input class="form-field js-field" id="birthdate" name="birthdate" required type="date" title="O campo está incompleto ou tem uma data inválida.">
-    </label>
-    <button type="submit">Salvar</button>
-  </form>
-  
-  <br>
-  
-  <table class="table js-table">
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Data de nascimento</th>
-      </tr>
-    </thead>
-  </table>
+
+  <main class="container">
+
+    <div class="row justify-content-center">
+
+      <header class="col-12">
+        <div style="height: 200px; background-color: grey;"></div>
+      </header>
+
+      <div class="col-12 col-lg-9 mt-4">
+        <form data-form class="row g-3 needs-validation" novalidate>
+
+          <div class="col-12 col-lg-6 ">
+            <label for="name" class="form-label">Nome</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupName"><i data-feather="user" class="icon"></i></span>
+              <input type="text" class="form-control" id="name" required pattern="(\D\s?){3,120}">
+              <div class="invalid-feedback">
+                Insira um nome usando entre 3 e 120 letras.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 ">
+            <label for="birthdate" class="form-label">Data de nascimento</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupBirthdate"><i data-feather="gift" class="icon"></i></span>
+              <input type="date" class="form-control" id="birthdate" required>
+              <div class="invalid-feedback">
+                Por favor escolha uma data válida.
+              </div>
+            </div>
+          </div>
+   
+          <div class="col-12">
+            <button class="btn btn-primary mt-2" type="submit">Adicionar contato</button>
+          </div>
+          
+        </form>
+      </div>
+
+      <div class="col-12 col-lg-9 mt-5">
+        <table data-table class="table table-striped">
+          <thead>
+            <tr>
+              <th class="col-5 col-xl-6">Nome</th>
+              <th class="col-4 col-xl-4">Data de nascimento</th>
+            </tr>
+          </thead>
+        </table>
+
+    </div>
+
+  </main>
+
 </body>
 </html>

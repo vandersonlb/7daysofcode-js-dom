@@ -24,9 +24,7 @@ class Contacts {
   }
 
   editContact(id, name, birthdate) {
-    this._contactList = this._contactList.map((contact) =>
-      contact.id === id ? { name, birthdate, id } : contact
-    );
+    this._contactList = this._contactList.map((contact) => contact.id === id ? { name, birthdate, id } : contact);
     this._commit(this._contactList);
   }
 
