@@ -6,6 +6,7 @@
 
 O desafio, elaborado pela [Alura](https://7daysofcode.io/), basicamente consiste em desenvolver um CRUD com os dados persistindo localmente no navegador.<br>
 Como desafio adicional eu usei MVC como *design pattern* e [Bootstrap 5](https://getbootstrap.com/) para os estilos e comportamento.<br>
+<br>
 Veja em funcionamento [aqui](https://vandersonlb.github.io/7daysofcode_js_dom/).
 ___
 
